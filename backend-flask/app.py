@@ -14,8 +14,10 @@ from services.create_message import *
 from services.show_activity import *
 
 app = Flask(__name__)
-frontend = os.getenv('FRONTEND_URL')
-backend = os.getenv('BACKEND_URL')
+# frontend = os.getenv('FRONTEND_URL')
+frontend = "*"
+# backend = os.getenv('BACKEND_URL')
+backend = "*"
 origins = [frontend, backend]
 cors = CORS(
   app, 

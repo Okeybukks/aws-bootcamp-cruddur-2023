@@ -1,0 +1,36 @@
+version: '3'
+services:
+
+  flaskapp:
+    build:
+      context: backend-flask
+      dockerfile: Dockerfile
+    container_name: flask-app
+    volumes:
+      - ./backend-flask:/backend-flask
+    environment:
+      FRONTEND_URL: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+      BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+    ports:
+      - "4567:4567"
+    networks:
+      - cruddur
+
+  webapp:
+    depends_on:
+      - flaskapp
+    build:
+      context: frontend-react-js
+      dockerfile: Dockerfile
+    container_name: react-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend-react-js:/frontend-react-js
+    environment:
+      REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
+    networks:
+      - cruddur
+
+networks: 
+  cruddur:
