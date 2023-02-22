@@ -15,6 +15,12 @@ services:
       - "4567:4567"
     networks:
       - cruddur
+    healthcheck:
+      test: curl --fail https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST} || exit 1
+      interval: 30s
+      timeout: 30s
+      retries: 3
+      start_period: 0s
 
   webapp:
     depends_on:
