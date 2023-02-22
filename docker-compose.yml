@@ -5,6 +5,7 @@ services:
     build:
       context: backend-flask
       dockerfile: Dockerfile
+    image: achebeh/aws-cruddur-2023-flaskapp
     container_name: flask-app
     volumes:
       - ./backend-flask:/backend-flask
@@ -28,6 +29,7 @@ services:
     build:
       context: frontend-react-js
       dockerfile: Dockerfile
+    image: achebeh/aws-cruddur-2023-webapp
     container_name: react-app
     ports:
       - "3000:3000"
