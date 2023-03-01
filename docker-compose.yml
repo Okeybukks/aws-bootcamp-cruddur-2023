@@ -8,7 +8,7 @@ services:
     image: achebeh/aws-cruddur-2023-flaskapp
     container_name: flask-app
     volumes:
-      - ./backend-flask:/backend-flask
+      - /backend-flask:/backend-flask
     environment:
       FRONTEND_URL: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
       BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
@@ -37,7 +37,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./frontend-react-js:/frontend-react-js
+      - /frontend-react-js:/frontend-react-js
     environment:
       REACT_APP_BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
     networks:
