@@ -1,0 +1,4 @@
+export HONEYCOMB_API_KEY=gvihAyvXcveCFLfSFySafQ
+
+# To persist the env in gitpod
+gp env HONEYCOMB_API_KEY=gvihAyvXcveCFLfSFySafQ
