@@ -11,3 +11,6 @@ opentelemetry-instrumentation-requests
 ## Rollbar
 blinker
 rollbar
+
+## AWS SDK fron XRAY
+aws-xray-sdk
