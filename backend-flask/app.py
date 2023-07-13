@@ -2,6 +2,8 @@ from flask import Flask
 from flask import request
 from flask_cors import CORS, cross_origin
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 from services.home_activities import *
 from services.notifications_activities import *
@@ -55,8 +57,12 @@ xray_url = os.getenv("AWS_XRAY_URL")
 xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
 XRayMiddleware(app, xray_recorder)
 
-frontend = os.environ.get('FRONTEND_URL')
-backend = os.environ.get('BACKEND_URL')
+frontend = os.getenv('FRONTEND_URL')
+backend = os.getenv('BACKEND_URL')
+print('>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<')
+print(frontend, backend)
+print('>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<')
+
 origins = [frontend, backend]
 cors = CORS(
   app, 
