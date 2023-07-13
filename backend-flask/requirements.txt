@@ -1,4 +1,4 @@
-flask
+flask <= 2.2
 flask-cors
 
 ## Telemetry
@@ -14,3 +14,6 @@ rollbar
 
 ## AWS SDK fron XRAY
 aws-xray-sdk
+
+importlib-metadata~=6.0.0
+python-dotenv

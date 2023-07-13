@@ -55,8 +55,8 @@ xray_url = os.getenv("AWS_XRAY_URL")
 xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
 XRayMiddleware(app, xray_recorder)
 
-frontend = os.getenv('FRONTEND_URL')
-backend = os.getenv('BACKEND_URL')
+frontend = os.environ.get('FRONTEND_URL')
+backend = os.environ.get('BACKEND_URL')
 origins = [frontend, backend]
 cors = CORS(
   app, 
