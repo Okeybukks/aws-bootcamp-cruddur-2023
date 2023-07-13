@@ -59,7 +59,9 @@ XRayMiddleware(app, xray_recorder)
 
 frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
+print('>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<')
 print(frontend, backend)
+print('>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<')
 origins = [frontend, backend]
 cors = CORS(
   app, 
