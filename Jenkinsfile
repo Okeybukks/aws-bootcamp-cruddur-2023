@@ -12,8 +12,8 @@ pipeline {
                 }
             }
             steps {
-               dir("frontend-freact-js"){
-                    sh "npm install"
+               dir("frontend-react-js"){
+                    sh "pwd"
                } 
             }
         }
