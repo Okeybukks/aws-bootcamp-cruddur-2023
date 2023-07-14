@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        CI: true
+        CI = 'true'
     }
     stages {
         stage ("Build Frontend"){
